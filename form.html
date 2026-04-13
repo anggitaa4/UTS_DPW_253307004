@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Pendaftaran</title>
+    <link rel="stylesheet" href="asset/css/style.css">
+</head>
+
+<body>
+<header>
+    <h1>Form Pendaftaran</h1>
+</header>
+
+<nav>
+    <a href="index.html">Beranda</a>
+    <a href="alur.html">Alur</a>
+    <a href="form.html">Pendaftaran</a>
+</nav>
+
+<main>
+    <form id="formDaftar">
+
+        <label for="nama">Nama Lengkap</label>
+        <small class="info">Masukkan nama lengkap sesuai identitas (tanpa singkatan)</small>
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap">
+
+        <label for="nik">NIK</label>
+        <small class="info">Masukkan NIK sebanyak 16 digit angka</small>
+        <input type="number" id="nik" name="nik" placeholder="Masukkan NIK">
+
+        <label for="jalur">Jalur Pendaftaran</label>
+        <small class="info">Pilih jalur pendaftaran yang sesuai</small>
+        <select id="jalur" name="jalur">
+            <option value="">Pilih Jalur</option>
+            <option value="SNBP">SNBP</option>
+            <option value="SNBT">SNBT</option>
+            <option value="Mandiri">Mandiri</option>
+        </select>
+
+        <button type="button" onclick="kirimData()">Kirim Pendaftaran</button>
+
+    </form>
+
+    <div id="toast"></div>
+</main>
+
+<footer>
+    <p>&copy;PPDB SMKN 1 Kasreman 2026/2027</p>
+</footer>
+
+<script src="asset/javascript/script.js"></script>
+
+</body>
+</html>
