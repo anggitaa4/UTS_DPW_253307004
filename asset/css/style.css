@@ -353,3 +353,53 @@ form {
     background: linear-gradient(135deg, #eefaff, #dae6ff, #f1fbff);
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
+.popup-success {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+.popup-box {
+    background: linear-gradient(135deg, #ffffff, #eaf1ff, #fff8dc);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    width: 300px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: scaleIn 0.3s ease;
+}
+.popup-box h3 {
+    color: #2a5298;
+    margin-bottom: 10px;
+}
+.popup-box p {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.popup-box button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #2a5298, #ffd700);
+    color: white;
+    cursor: pointer;
+}
+.popup-box button:hover {
+    opacity: 0.9;
+}
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

@@ -22,24 +22,31 @@
     <form id="formDaftar">
         <label for="nama">Nama Lengkap</label>
         <small class="info">Masukkan nama lengkap sesuai identitas (tanpa singkatan)</small>
-        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap">
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
 
         <label for="nik">NIK</label>
         <small class="info">Masukkan NIK sebanyak 16 digit angka</small>
-        <input type="number" id="nik" name="nik" placeholder="Masukkan NIK">
+        <input type="number" id="nik" name="nik" placeholder="Masukkan NIK" required>
 
         <label for="jalur">Jalur Pendaftaran</label>
         <small class="info">Pilih jalur pendaftaran yang sesuai</small>
-        <select id="jalur" name="jalur">
+        <select id="jalur" name="jalur" required>
             <option value="">Pilih Jalur</option>
-            <option value="SNBP">SNBP</option>
-            <option value="SNBT">SNBT</option>
-            <option value="Mandiri">Mandiri</option>
+            <option value="SNBP">Zonasi</option>
+            <option value="SNBT">Afirmasi</option>
+            <option value="Mandiri">Prestasi</option>
         </select>
 
         <button type="button" onclick="kirimData()">Kirim Pendaftaran</button>
-
     </form>
+    
+    <div id="successPopup" class="popup-success" style="display:none;">
+        <div class="popup-box">
+            <h3>Pendaftaran Berhasil</h3>
+            <p>Data Anda telah tersimpan.</p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
 
     <div id="toast"></div>
 </main>
