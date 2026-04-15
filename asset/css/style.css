@@ -5,7 +5,6 @@
 }
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    background: url('../img/bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,10 +16,11 @@ body::before {
     inset: 0;
     background: rgba(255,255,255,0.65);
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     z-index: -1;
 }
 header {
-    background: linear-gradient(90deg, rgba(30,60,114,0.9), rgba(0,198,255,0.85));
+    background: linear-gradient(90deg, rgba(10, 29, 66, 0.9), rgba(103, 209, 238, 0.85));
     color: white;
     text-align: center;
     padding: 45px 20px;
@@ -49,14 +49,13 @@ nav a {
 nav a:hover {
     color: #153772;
 }
-
 main {
     width: 90%;
     max-width: 900px;
     margin: 40px auto;
 }
 .card {
-    background: rgba(255,255,255,0.95);
+    background: rgba(196, 228, 253, 0.95);
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
@@ -71,15 +70,14 @@ h2, h3 {
     color: #555;
     margin-bottom: 8px;
 }
-
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0 6px;
     margin-top: 20px;
-    border-spacing: 0 6px; /* jarak antar baris */
 }
 table th {
-    background: #2a5298;
+    background: #133263;
     color: white;
     padding: 14px 18px;
     text-align: left;
@@ -87,7 +85,7 @@ table th {
 }
 table td {
     padding: 14px 18px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #c0daff;
     text-align: left;
     line-height: 1.6;
     vertical-align: middle;
@@ -98,7 +96,6 @@ tbody tr {
 tbody tr:nth-child(even) {
     background: #f4f7fb;
 }
-
 form {
     max-width: 500px;
     margin: 20px auto;
@@ -159,7 +156,127 @@ html, body {
     width: 100%;
     overflow-x: hidden;
 }
+.deskripsi-alur {
+    position: relative;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 8px;
+}
+.alur-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.alur-item {
+    display: flex;
+    align-items: flex-start;
+    background: linear-gradient(135deg, #ffffff, #f4f7fb);
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    border-left: 5px solid #2a5298;
+}
+.alur-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+.alur-number {
+    min-width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #2a5298, #1e3c72);
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+.alur-content h4 {
+    margin-bottom: 5px;
+    color: #2a5298;
+    font-size: 16px;
+}
+.alur-content p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.deskripsi-alur ol {
+    counter-reset: step;
+    list-style: none;
+    margin-top: 10px;
+    padding-left: 0;
+    position: relative;
+}
+.deskripsi-alur ol::before {
+    content: "";
+    position: absolute;
+    left: 22px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #2a5298, #00c6ff);
+    opacity: 0.3;
+}
+.deskripsi-alur ol li {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff, #eef3fb);
+    margin-bottom: 10px;
+    padding: 10px 12px 10px 50px;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    border-left: 4px solid #2a5298;
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+.deskripsi-alur ol li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,198,255,0.25);
+}
+.deskripsi-alur ol li::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+    background: linear-gradient(135deg, #00c6ff, #2a5298);
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.deskripsi-alur ol li strong {
+    display: block;
+    font-size: 13px;
+    color: #2a5298;
+    margin-bottom: 3px;
+}
+.deskripsi-alur ol li:nth-child(1) { animation-delay: 0.1s; }
+.deskripsi-alur ol li:nth-child(2) { animation-delay: 0.2s; }
+.deskripsi-alur ol li:nth-child(3) { animation-delay: 0.3s; }
+.deskripsi-alur ol li:nth-child(4) { animation-delay: 0.4s; }
+.deskripsi-alur ol li:nth-child(5) { animation-delay: 0.5s; }
+.deskripsi-alur ol li:nth-child(6) { animation-delay: 0.6s; }
+.deskripsi-alur ol li:nth-child(7) { animation-delay: 0.7s; }
 
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 @media (max-width: 768px) {
     main {
         width: 95%;
@@ -177,4 +294,62 @@ html, body {
     .card {
         padding: 20px;
     }
+    .alur-item {
+        flex-direction: column;
+    }
+    .alur-number {
+        margin-bottom: 10px;
+    }
+}
+header {
+    background: linear-gradient(120deg, #0a1d42 0%, #2a5298 60%, #ffd700 100%);
+    position: relative;
+    overflow: hidden;
+}
+header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(255,215,0,0.15), transparent 60%);
+}
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(90deg, #1e3c72 0%, #2a5298 60%, #ffd700 100%);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+nav a {
+    position: relative;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    color: #fff;
+}
+nav a:hover {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+}
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #00c6ff, #ffd700);
+    transition: 0.3s;
+    transform: translateX(-50%);
+}
+nav a:hover::after {
+    width: 80%;
+}
+nav a.active {
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 4px 12px rgba(255,215,0,0.4);
+}
+form {
+    background: linear-gradient(135deg, #eefaff, #dae6ff, #f1fbff);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
